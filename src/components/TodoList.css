@@ -1,0 +1,49 @@
+.todoListContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.todoListContainer #taskCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#taskCont #inputCont {
+  outline: none;
+  border: none;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 150px;
+}
+#taskCont #add {
+  cursor: pointer;
+}
+#taskListCont ul {
+  padding: 0px;
+}
+#taskListCont ul li {
+  width: auto;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: lightblue;
+  border-radius: 10px;
+}
+#taskListCont ul li #value span {
+  width: 100px;
+}
+#taskListCont ul li #btnCont,
+#taskListCont ul li #value {
+  display: flex;
+  gap: 10px;
+}
+.check {
+  text-decoration: line-through;
+}
