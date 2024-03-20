@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./TodoList.css";
+import TaskList from "./TaskList";
 export default function TodoList() {
   const [value, setValue] = useState(" ");
   const [task, setTask] = useState([]);
@@ -48,39 +49,13 @@ export default function TodoList() {
             Add
           </button>
         </div>
-        <div id="taskListCont">
-          <ul>
-            {task.length > 0 &&
-              task.map((t) => (
-                <li key={t} id={t}>
-                  <div id="value">
-                    <input
-                      type="checkbox"
-                      onChange={(e) => lineThrough(e, t)}
-                    />
-                    <span className={isChecked[t] ? "check" : ""}>{t}</span>
-                  </div>
-                  <div id="btnCont">
-                    <button
-                      type="button"
-                      id="edit"
-                      onClick={() => editTask(t)}
-                      disabled={isChecked[t]}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      type="button"
-                      id="delete"
-                      onClick={() => deleteTask(t)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </li>
-              ))}
-          </ul>
-        </div>
+        <TaskList
+          task={task}
+          isChecked={isChecked}
+          lineThrough={lineThrough}
+          editTask={editTask}
+          deleteTask={deleteTask}
+        />
       </div>
     </>
   );
